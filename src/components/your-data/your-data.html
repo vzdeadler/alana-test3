@@ -1,0 +1,23 @@
+<ion-grid>
+  <ion-row>
+    <ion-col col-12>
+      <ion-item class="form-item">
+        <ion-input type="text" placeholder="{{label.name}}" [(ngModel)]="userData.name"></ion-input>
+      </ion-item>
+      <ion-item class="form-item">
+        <ion-input type="text" placeholder="{{label.lastname}}" [(ngModel)]="userData.lastname"></ion-input>
+      </ion-item>
+      <ion-item class="form-item">
+        <ion-select placeholder="{{label.sex}}" [(ngModel)]="userData.sex">
+          <ion-option *ngFor="let item of sexValues" value="{{item.value}}">{{item.name}}</ion-option>
+          <!-- <ion-option value="37">Hombre</ion-option>
+          <ion-option value="38">Mujer</ion-option>
+          <ion-option value="39">Otro</ion-option> -->
+        </ion-select>
+      </ion-item>
+      <ion-item class="form-item">
+        <ion-datetime placeholder="{{label.birthday}}" displayFormat="DD/MM/YYYY" [(ngModel)]="userData.birthday"></ion-datetime>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>
