@@ -21,12 +21,15 @@ export class YourContactComponent {
 
   label = {
     country: 'PAÍS',
-    direction: 'DIRECCIÓN',
-    phone: 'TELÉFONO'
+    countryCode: '+00',
+    phone: 'TELÉFONO',
+    direction: 'DIRECCIÓN'
   };
 
   userData = {
     country: '',
+    countryCode: '',
+    phone: '',
     direction: ''
   };
 
@@ -34,6 +37,12 @@ export class YourContactComponent {
     { name: 'Country 1' },
     { name: 'Country 2' },
     { name: 'Country 3' }
+  ];
+
+  countriesCodes = [
+    { name: 'EEUU', code: '01' },
+    { name: 'Colombia', code: '58' },
+    { name: 'Venezuela', code: '57' }
   ];
 
 }

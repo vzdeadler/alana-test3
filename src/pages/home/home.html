@@ -1,11 +1,16 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+
+
+
 
 <ion-content padding>
-  <button (tap)="gotoRegister()">Register</button>
+  <img class="alana-logo" src="../../assets/imgs/logo-alana-icon.png">
+
+  <h3>Welcome to Alana Test 3!</h3>
+
 </ion-content>
+
+<ion-footer no-shadow no-border>
+  <ion-toolbar position="bottom">
+    <button class="form-btn" ion-button full (tap)="gotoRegister()">{{text.register}}</button>
+  </ion-toolbar>
+</ion-footer>

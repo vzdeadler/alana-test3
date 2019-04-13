@@ -7,44 +7,27 @@
         </ion-select>
       </ion-item>
       <ion-row>
-        <ion-col col-4>
+        <ion-col class="mix-right" col-4>
           <ion-label stacked>Código</ion-label>
           <ion-item class="form-item">
-            <ion-input type="text" placeholder="{{label.phone}}"></ion-input>
+            <ion-select placeholder="{{label.countryCode}}" [(ngModel)]="userData.countryCode">
+                <ion-option *ngFor="let item of countriesCodes" value="{{item.code}}">+{{item.code}}</ion-option>
+                <!-- <ion-option value="37">Hombre</ion-option>
+                <ion-option value="38">Mujer</ion-option>
+                <ion-option value="39">Otro</ion-option> -->
+              </ion-select>
           </ion-item>
         </ion-col>
-        <ion-col col-8>
-          <ion-label stacked>asd</ion-label>
+        <ion-col class="mix-left" col-8>
+          <ion-label class="invisible-label" stacked>asd</ion-label>
           <ion-item class="form-item">
             <ion-input type="text" placeholder="{{label.phone}}"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-item class="form-item">
-        <ion-input type="text" placeholder="{{label.phone}}"></ion-input>
-      </ion-item>
-      <ion-item class="form-item">
         <ion-input type="text" placeholder="{{label.direction}}" [(ngModel)]="userData.direction"></ion-input>
       </ion-item>
-      <!-- <ion-item class="formItem">
-        <ion-label stacked>{{label.name}}</ion-label>
-        <ion-input type="text" placeholder="Nombre" [(ngModel)]="userData.name"></ion-input>
-      </ion-item>
-      <ion-item class="formItem">
-        <ion-label stacked>{{label.lastname}}</ion-label>
-        <ion-input type="text" placeholder="Apellido" [(ngModel)]="userData.lastname"></ion-input>
-      </ion-item>
-      <ion-item class="formItem">
-        <ion-label stacked>{{label.sex}}</ion-label>
-        <ion-select placeholder="Seleccione" [(ngModel)]="userData.sex">
-          <ion-option value="nes">Femenino</ion-option>
-          <ion-option value="n64">Masculino</ion-option>
-        </ion-select>
-      </ion-item>
-      <ion-item class="formItem">
-        <ion-label stacked>{{label.birthday}}</ion-label>
-        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="userData.birthday"></ion-datetime>
-      </ion-item> -->
     </ion-col>
   </ion-row>
 </ion-grid>
