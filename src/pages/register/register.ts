@@ -74,7 +74,6 @@ export class RegisterPage {
   };
 
   validateYourData(): void {
-    this.openReferalModal();
     if(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(this.yourData.userData.name)
       && /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(this.yourData.userData.lastname)
       && this.yourData.userData.sex
