@@ -5,13 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar hideBackButton>
+  <ion-navbar text-center hideBackButton align-title="center"> 
     <ion-buttons left>
         <button ion-button class="back-btn" (click)="backController()">
             <ion-icon class="back-icon" name="arrow-back"></ion-icon>
         </button>
     </ion-buttons>
-    <ion-title>register</ion-title>
+    <ion-title>{{headerTitle}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -34,6 +34,6 @@
 
 <ion-footer no-shadow no-border>
   <ion-toolbar position="bottom">
-    <button class="form-btn" ion-button full (click)="btnController()">{{this.formStep==1 ? 'Siguiente' : 'Continuar'}}</button>
+    <button class="form-btn" ion-button full (click)="btnController()">{{this.formStep==3 ? 'Registrarse' : 'Siguiente'}}</button>
   </ion-toolbar>
 </ion-footer>

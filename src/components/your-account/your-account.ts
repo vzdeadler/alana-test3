@@ -13,11 +13,12 @@ import { Component } from '@angular/core';
 export class YourAccountComponent {
 
   text: string;
+  passwordType: string;
 
   label = {
-    email: '',
-    password: '',
-    confirmPassword: ''
+    email: 'EMAIL',
+    password: 'CONTRASEÑA',
+    confirmPassword: 'CONFIRMAR CONTRASEÑA'
   };
 
   userData = {
@@ -29,6 +30,12 @@ export class YourAccountComponent {
   constructor() {
     console.log('Hello YourAccountComponent Component');
     this.text = 'Hello World';
+    this.passwordType = 'password';
+  }
+
+  togglePassword(): void {
+    console.log('asd');
+    this.passwordType == 'password' ? this.passwordType = 'text' : this.passwordType = 'password'; 
   }
 
 }

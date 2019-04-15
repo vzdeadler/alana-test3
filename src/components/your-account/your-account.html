@@ -2,33 +2,15 @@
   <ion-row>
     <ion-col col-12>
       <ion-item class="form-item">
-        <ion-input type="text" placeholder="label.email" [(ngModel)]="userData.email"></ion-input>
+        <ion-input type="text" placeholder="{{label.email}}" [(ngModel)]="userData.email"></ion-input>
       </ion-item>
       <ion-item class="form-item">
-        <ion-input type="password" placeholder="label.password" [(ngModel)]="userData.password"></ion-input>
+        <ion-icon class="icon-password" item-end name="eye" (click)='togglePassword()'></ion-icon>
+        <ion-input type="{{passwordType}}" placeholder="{{label.password}}" [(ngModel)]="userData.password"></ion-input>
       </ion-item>
       <ion-item class="form-item">
-        <ion-input type="password" placeholder="label.confirmPassword" [(ngModel)]="userData.confirmPassword"></ion-input>
+        <ion-input type="{{passwordType}}" placeholder="{{label.confirmPassword}}" [(ngModel)]="userData.confirmPassword"></ion-input>
       </ion-item>
-      <!-- <ion-item class="formItem">
-        <ion-label stacked>{{label.name}}</ion-label>
-        <ion-input type="text" placeholder="Nombre" [(ngModel)]="userData.name"></ion-input>
-      </ion-item>
-      <ion-item class="formItem">
-        <ion-label stacked>{{label.lastname}}</ion-label>
-        <ion-input type="text" placeholder="Apellido" [(ngModel)]="userData.lastname"></ion-input>
-      </ion-item>
-      <ion-item class="formItem">
-        <ion-label stacked>{{label.sex}}</ion-label>
-        <ion-select placeholder="Seleccione" [(ngModel)]="userData.sex">
-          <ion-option value="nes">Femenino</ion-option>
-          <ion-option value="n64">Masculino</ion-option>
-        </ion-select>
-      </ion-item>
-      <ion-item class="formItem">
-        <ion-label stacked>{{label.birthday}}</ion-label>
-        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="userData.birthday"></ion-datetime>
-      </ion-item> -->
     </ion-col>
   </ion-row>
 </ion-grid>

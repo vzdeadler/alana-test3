@@ -10,7 +10,7 @@
         <ion-col class="mix-right" col-4>
           <ion-label stacked>Código</ion-label>
           <ion-item class="form-item">
-            <ion-select placeholder="{{label.countryCode}}" [(ngModel)]="userData.countryCode">
+            <ion-select class="no-select-icon" placeholder="{{label.countryCode}}" [(ngModel)]="userData.countryCode">
                 <ion-option *ngFor="let item of countriesCodes" value="{{item.code}}">+{{item.code}}</ion-option>
                 <!-- <ion-option value="37">Hombre</ion-option>
                 <ion-option value="38">Mujer</ion-option>
@@ -21,7 +21,7 @@
         <ion-col class="mix-left" col-8>
           <ion-label class="invisible-label" stacked>asd</ion-label>
           <ion-item class="form-item">
-            <ion-input type="text" placeholder="{{label.phone}}"></ion-input>
+            <ion-input type="number" placeholder="{{label.phone}}" [(ngModel)]="userData.phone"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
