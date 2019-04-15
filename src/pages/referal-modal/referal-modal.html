@@ -1,0 +1,31 @@
+<!--
+  Generated template for the ReferalModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>referalModal</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content padding>
+  <img class="modal-icon" src='../../assets/imgs/modal-icon.png'>
+  <p>¿Tienes un <span class="bold-word">código</span> referencial de un amigo #alaninja?</p>
+  <p class="share-code-text">(Comparte ese código)</p>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-item class="form-item">
+          <ion-label stacked>{{label.codeInput}}</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.code"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button class="send-btn" full (click)="sendCode(1)">{{label.sendCode}}</button>
+  <button class="no-code-btn" full (click)="sendCode(0)">{{label.noCode}}</button>
+</ion-content>

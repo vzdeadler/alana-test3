@@ -1,0 +1,44 @@
+page-referal-modal {
+    text-align: center;
+}
+
+.modal-icon {
+    width: 40%;
+}
+
+.send-btn, .no-code-btn {
+    width: 90%;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.share-code-text {
+    color: slategray;
+}
+
+.send-btn {
+    background-color: #dd4a58;
+    color: white;
+}
+
+.no-code-btn {
+    background-color: #fff;
+    color: #dd4a58;
+    border: 3px solid #dd4a58;
+}
+
+.bold-word {
+    color: #dd4a58;
+    font-weight: bold;
+}
+
+.modal-wrapper {
+    min-height: 450px;
+    height: auto;
+    width: 85%;
+    margin: 100px auto;
+}

@@ -106,23 +106,6 @@ ion-select {
   box-shadow: none;
 }
 
-// ion-header {
-//   .button-md {
-//     box-shadow: none;
-//   }
-
-//   .toolbar-title {
-//     display: -webkit-flex;
-//     display: flex;
-//     -webkit-flex-direction: row;
-//     flex-direction: row;
-//     -webkit-align-items: center;
-//     align-items: center;
-//     -webkit-justify-content: center;
-//     justify-content: center;
-//   }
-// }
-
 ion-title {
   position: absolute;
   top: 0;
@@ -135,4 +118,8 @@ ion-title {
 
 .toolbar-title-md {
   color: #dd4a58;
+}
+
+.toolbar-background-md {
+  background-color: #fff;
 }

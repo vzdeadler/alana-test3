@@ -1,9 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Slides, Navbar } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Slides, Navbar, ModalController } from 'ionic-angular';
+
+import { ReferalModalPage } from './../referal-modal/referal-modal';
 
 import { YourContactComponent } from '../../components/your-contact/your-contact';
 import { YourDataComponent } from './../../components/your-data/your-data';
 import { YourAccountComponent } from '../../components/your-account/your-account';
+
+import { CodeProvider } from './../../providers/code/code';
 
 @IonicPage()
 @Component({
@@ -20,8 +24,15 @@ export class RegisterPage {
 
   slideStep: number;
   headerTitle: string;
+  referalCode: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private modalCtrl: ModalController,
+    private codeProvider: CodeProvider
+    //public referalPage: ReferalModalPage
+  ) {
   }
 
   ionViewDidLoad() {
@@ -63,6 +74,7 @@ export class RegisterPage {
   };
 
   validateYourData(): void {
+    this.openReferalModal();
     if(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(this.yourData.userData.name)
       && /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(this.yourData.userData.lastname)
       && this.yourData.userData.sex
@@ -78,7 +90,6 @@ export class RegisterPage {
   };
 
   validateYourContact(): void {
-    console.log('on yourContact function..');
     if(this.yourContact.userData.country && this.yourContact.userData.countryCode 
       && this.yourContact.userData.phone && this.yourContact.userData.direction)
     {
@@ -95,8 +106,37 @@ export class RegisterPage {
     && this.yourAccount.userData.password.length > 7
     && this.yourAccount.userData.password == this.yourAccount.userData.confirmPassword)
     {
-      
+      this.openReferalModal();
     }
   }
+
+  openReferalModal(): void {
+    let opts: any = {
+      showBackdrop: true,
+      enableBackdropDismiss: true
+    }
+
+    let modal = this.modalCtrl.create(ReferalModalPage, {}, opts);
+    modal.present();
+    
+    modal.onDidDismiss( (data) => {
+      console.log(data);
+      if( data ){
+        this.codeProvider.sendCode(data).subscribe( 
+          (data) => {
+            console.log( data )
+          },
+          (err) => {
+            console.log(err);
+          }
+        );
+        console.log( this.yourAccount.userData );
+        console.log( this.yourContact.userData );
+        console.log( this.yourData.userData );
+      }
+    });
+
+    //this.referalCode = this.referalModal.userData.code;
+  };
 
 }
